@@ -1,0 +1,6 @@
+{
+  "name": "FarmShare",
+  "description": "Agricultural equipment rental platform connecting farmers and equipment owners with hourly/daily booking, demo payment, review system, and administrative control.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

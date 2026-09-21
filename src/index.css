@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   FarmShare Cinematic Live Agricultural Background Animations
+   Smooth 60fps GPU acceleration, warm golden hour palette, reduced-motion safe
+   ========================================================================== */
+
+@keyframes agriSunPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes agriSunbeamBreath {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.52;
+  }
+}
+
+@keyframes agriCloudDrift1 {
+  0% {
+    transform: translate3d(-35%, 0, 0);
+  }
+  100% {
+    transform: translate3d(115%, 0, 0);
+  }
+}
+
+@keyframes agriCloudDrift2 {
+  0% {
+    transform: translate3d(-45%, 0, 0);
+  }
+  100% {
+    transform: translate3d(120%, 0, 0);
+  }
+}
+
+@keyframes agriBirdsFlightSlow {
+  0% {
+    transform: translate3d(-100px, 35px, 0);
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.8;
+  }
+  88% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(calc(100vw + 120px), -65px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes agriTractorTravelSmooth {
+  0% {
+    transform: translate3d(-140px, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 160px), 0, 0);
+  }
+}
+
+@keyframes agriTractorWheelTurn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes agriTractorDustFloat {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.4);
+  }
+  25% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-30px, -12px, 0) scale(1.5);
+  }
+}
+
+@keyframes agriCropGentleSway1 {
+  0%, 100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  32% {
+    transform: rotate(2.4deg) skewX(1.4deg);
+  }
+  68% {
+    transform: rotate(-1.8deg) skewX(-1deg);
+  }
+}
+
+@keyframes agriCropGentleSway2 {
+  0%, 100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  36% {
+    transform: rotate(-2.6deg) skewX(-1.6deg);
+  }
+  72% {
+    transform: rotate(2.2deg) skewX(1.3deg);
+  }
+}
+
+@keyframes agriMoteFloatNatural {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(28px, -45px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes agriDataStreamFlow {
+  0% {
+    stroke-dashoffset: 280;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes agriGpsBeaconPulse {
+  0% {
+    r: 2;
+    opacity: 0.95;
+  }
+  100% {
+    r: 14;
+    opacity: 0;
+  }
+}
+
+/* Animation Classes */
+.animate-agri-sun {
+  animation: agriSunPulse 10s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-agri-sunbeam {
+  animation: agriSunbeamBreath 8s ease-in-out infinite;
+}
+
+.animate-agri-cloud-1 {
+  animation: agriCloudDrift1 95s linear infinite;
+  will-change: transform;
+}
+
+.animate-agri-cloud-2 {
+  animation: agriCloudDrift2 72s linear infinite;
+  will-change: transform;
+}
+
+.animate-agri-birds {
+  animation: agriBirdsFlightSlow 44s linear infinite;
+  will-change: transform;
+}
+
+.animate-agri-tractor-travel {
+  animation: agriTractorTravelSmooth 56s linear infinite;
+  will-change: transform;
+}
+
+.animate-agri-wheel {
+  animation: agriTractorWheelTurn 1.5s linear infinite;
+  transform-origin: center;
+}
+
+.animate-agri-dust-1 {
+  animation: agriTractorDustFloat 1.3s ease-out infinite;
+}
+
+.animate-agri-dust-2 {
+  animation: agriTractorDustFloat 1.3s ease-out infinite 0.45s;
+}
+
+.animate-agri-dust-3 {
+  animation: agriTractorDustFloat 1.3s ease-out infinite 0.9s;
+}
+
+.animate-agri-sway-1 {
+  animation: agriCropGentleSway1 4.6s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.animate-agri-sway-2 {
+  animation: agriCropGentleSway2 3.8s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.animate-agri-mote-1 {
+  animation: agriMoteFloatNatural 12s ease-in-out infinite;
+}
+
+.animate-agri-mote-2 {
+  animation: agriMoteFloatNatural 16s ease-in-out infinite;
+}
+
+.animate-agri-data-flow {
+  animation: agriDataStreamFlow 20s linear infinite;
+}
+
+.animate-agri-beacon {
+  animation: agriGpsBeaconPulse 2.4s ease-out infinite;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-agri-sun,
+  .animate-agri-sunbeam,
+  .animate-agri-cloud-1,
+  .animate-agri-cloud-2,
+  .animate-agri-birds,
+  .animate-agri-tractor-travel,
+  .animate-agri-wheel,
+  .animate-agri-dust-1,
+  .animate-agri-dust-2,
+  .animate-agri-dust-3,
+  .animate-agri-sway-1,
+  .animate-agri-sway-2,
+  .animate-agri-mote-1,
+  .animate-agri-mote-2,
+  .animate-agri-data-flow,
+  .animate-agri-beacon {
+    animation: none !important;
+    transform: none !important;
+  }
+}
